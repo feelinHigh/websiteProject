@@ -3,33 +3,33 @@
 
     <header class="jumbotron">
         <div class="container">
-            <h1>Welcome to Campgrounds!</h1>
-            <p>View Our Hand-Picked Campgrounds From All Over The World</p>
+            <h1>Welcome to Hotels!</h1>
+            <p>View Our Hand-Picked Hotels From All Over The World</p>
             <p>
-                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
+                <a class="btn btn-primary btn-lg" href="/hotels/new">Add New Hotel</a>
             </p>
         </div>
     </header>
 
     <div class="row">
         <div class="col-lg-12">
-            <h3>Our Most Popular Campgrounds</h3>
+            <h3>Our Most Popular Hotels</h3>
         </div>
     </div>
 
 
     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
-        <% campgrounds.forEach(function(campground){ %>
+        <% hotels.forEach(function(hotel){ %>
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
-                    <img src="<%= campground.image %>">
+                    <img src="<%= hotel.image %>">
                     <div class="caption">
                         <h4>
-                            <%= campground.name %>
+                            <%= hotel.name %>
                         </h4>
                     </div>
                     <p>
-                        <a href="/campgrounds/<%=campground._id%>" class="btn btn-primary">More Info</a>
+                        <a href="/hotels/<%=hotel._id%>" class="btn btn-primary">More Info</a>
                     </p>
                 </div>
             </div>

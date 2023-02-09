@@ -3,7 +3,7 @@
 
     <div class="row">
         <div class="col-md-3">
-            <p class="lead">Campgrounds</p>
+            <p class="lead">Hotels</p>
             <div class="list-group">
                 <li class="list-group-item active">Info 1</li>
                 <li class="list-group-item">Info 2</li>
@@ -13,24 +13,24 @@
 
         <div class="col-md-9">
             <div class="thumbnail">
-                <img class="img-responsive" src="<%= campground.image %>">
+                <img class="img-responsive" src="<%= hotel.image %>">
                 <div class="caption-full" style="padding: 15px;">
                     <h4 class="pull-right">$
-                        <%= campground.price %>/Night</h4>
+                        <%= hotel.price %>/Night</h4>
                     <h4>
                         <a>
-                            <%= campground.name %>
+                            <%= hotel.name %>
                         </a>
                     </h4>
                     <p>
-                        <%= campground.description %>
+                        <%= hotel.description %>
                     </p>
                     <p>
-                        <em>Submitted by: <%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %></em>
+                        <em>Submitted by: <%= hotel.author.username %>, <%= moment(hotel.createdAt).fromNow() %></em>
                     </p>
-                    <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
-                        <a class="btn btn-warning" href="/campgrounds/<%=campground._id%>/edit">Edit</a>
-                        <form class="delete-form" action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
+                    <% if(currentUser && hotel.author.id.equals(currentUser._id)){ %>
+                        <a class="btn btn-warning" href="/hotels/<%=hotel._id%>/edit">Edit</a>
+                        <form class="delete-form" action="/hotels/<%=hotel._id%>?_method=DELETE" method="POST">
                             <button class="btn btn-danger">Delete</button>
                         </form>
                         <% } %>
@@ -39,12 +39,12 @@
 
             <div class="well">
                 <div class="text-right">
-                    <a class="btn btn-success" href="/campgrounds/<%=campground._id%>/comments/new">Add Comment</a>
+                    <a class="btn btn-success" href="/hotels/<%=hotel._id%>/comments/new">Add Comment</a>
                 </div>
 
                 <hr>
 
-                <% campground.comments.forEach(function(comment){ %>
+                <% hotel.comments.forEach(function(comment){ %>
                     <div class="row">
                         <div class="col-md-12">
                             <strong><%=comment.author.username%></strong>
@@ -54,11 +54,11 @@
                             </p>
 
                             <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
-                                <a class="btn btn-xs btn-warning" href="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>/edit">
+                                <a class="btn btn-xs btn-warning" href="/hotels/<%=hotel._id%>/comments/<%=comment._id%>/edit">
 								Edit
 							</a>
 
-                                <form class="delete-form" action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                <form class="delete-form" action="/hotels/<%=hotel._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
                                     <input type="submit" class="btn btn-xs btn-danger" value="Delete">
                                 </form>
                                 <% } %>
